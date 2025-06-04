@@ -1,0 +1,914 @@
+/* Estilos base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 20px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%; /* Aseguramos que ocupe todo el ancho */
+}
+
+.logo {
+  font-size: 24px;
+  color: #850000; /* Cambiado de #c0392b a #850000 */
+  font-weight: bold;
+  flex: 0 0 auto; /* El logo no crece ni se reduce */
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+}
+
+.nav-menu {
+  display: flex;
+  gap: 20px;
+  flex: 0 0 auto; /* El menú no crece ni se reduce */
+}
+
+.nav-menu.active {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  background-color: #fff;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  position: absolute;
+  top: 60px;
+  left: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+.nav-menu a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  text-transform: uppercase;
+  font-size: 14px;
+}
+
+.nav-menu a:hover {
+  color: #850000; /* Cambiado de #c0392b a #850000 */
+}
+
+.search-bar {
+  flex-grow: 1;
+  margin: 0 20px;
+  min-width: 200px; /* Aseguramos un ancho mínimo */
+}
+
+.search-bar input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 20px;
+  outline: none;
+}
+
+.user-actions {
+  display: flex;
+  gap: 15px;
+  flex: 0 0 auto; /* Las acciones no crecen ni se reducen */
+}
+
+.user-actions a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
+  font-size: 14px;
+}
+
+.user-actions a:hover {
+  color: #850000; /* Cambiado de #c0392b a #850000 */
+}
+
+.carousel {
+  width: 100%;
+  max-width: 1920px;
+  margin: 20px auto;
+  overflow: hidden;
+}
+
+.carousel-container {
+  display: flex;
+  width: 100%;
+}
+
+.carousel-slide {
+  width: 100%;
+  height: 0;
+  padding-bottom: 37.5%; /* Proporción 720/1920 = 0.375 o 37.5% */
+  position: relative;
+}
+
+.carousel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+/* MARQUEE */
+.marquee-wrapper {
+  overflow: hidden;
+  white-space: nowrap;
+  background: #000;
+  color: white;
+  font-family: 'Arial Black', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  height: 50px;
+  display: flex;
+  align-items: center;
+}
+
+.marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marqueeRight 20s linear infinite;
+}
+
+@keyframes marqueeRight {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+/* Catalogo */
+.product-grid {
+  display: flex;
+  justify-content: center;
+  gap: 15px; /* Espacio entre tarjetas */
+  max-width: 1920px; /* Máximo ancho permitido */
+  margin: 20px auto;
+  flex-wrap: wrap; /* Permite que las tarjetas se envuelvan si es necesario */
+}
+
+.product-card {
+  flex: 0 0 calc(16.666% - 12.5px); /* Base para 6 tarjetas, ajustado con el gap */
+  min-width: 250px; /* Mínimo ancho para evitar miniaturas */
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 105.88%; /* Proporción 324/306 ≈ 105.88% */
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid #eee; /* Borde sutil */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Sombra para profundidad */
+}
+
+.image-container img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.main-img {
+  opacity: 1;
+  z-index: 1;
+}
+
+.hover-img {
+  opacity: 0;
+  z-index: 2;
+}
+
+.image-container:hover .main-img {
+  opacity: 0;
+}
+
+.image-container:hover .hover-img {
+  opacity: 1;
+}
+
+.product-title {
+  margin-top: 10px;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.product-title a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.product-title a:hover {
+  text-decoration: underline;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Sección de categorías */
+.category-sections {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1920px;
+  margin: 40px auto;
+  padding: 0 20px;
+}
+
+.category-item {
+  position: relative;
+  flex: 0 0 30%; /* Cada imagen ocupa un tercio del contenedor */
+  min-width: 300px;
+  overflow: hidden;
+  border-radius: 12px;
+  text-decoration: none; /* Elimina el subrayado del enlace */
+}
+
+.category-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: filter 0.3s ease;
+}
+
+.category-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+.category-item:hover .category-text {
+  opacity: 1;
+}
+
+.category-item:hover img {
+  filter: brightness(50%); /* Oscurece la imagen al pasar el cursor */
+}
+
+/* Sección de Newsletter */
+.newsletter-section {
+  background: #f5f5f5; /* Fondo sólido */
+  padding: 40px 20px;
+  text-align: center;
+  margin: 40px 0;
+  max-width: 1920px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.newsletter-content {
+  margin-bottom: 40px;
+}
+
+.newsletter-content h2 {
+  font-size: 36px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.newsletter-content p {
+  font-size: 16px;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.newsletter-button {
+  background-color: #000;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 20px;
+}
+
+.newsletter-button:hover {
+  background-color: #333;
+}
+
+/* Pie de página */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.footer-content {
+  max-width: 1920px;
+  margin: 0 auto;
+}
+
+.footer-links {
+  margin-top: 10px;
+}
+
+.footer-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 14px;
+}
+
+.footer-links a:hover {
+  text-decoration: underline;
+}
+
+/* Botón flotante */
+.floating-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #25D366; /* Color oficial de WhatsApp */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  font-size: 24px;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* Centra la imagen */
+}
+
+.floating-button:hover {
+  background-color: #1EBE51; /* Tono más oscuro de WhatsApp */
+}
+
+.floating-button img {
+  max-width: 100%; /* Asegura que la imagen no exceda el botón */
+  max-height: 100%; /* Asegura que la imagen no exceda el botón */
+}
+
+/* Pop-up de contacto */
+.contact-popup {
+  position: fixed;
+  bottom: 100px;
+  right: 20px;
+  background-color: #fff;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  z-index: 1000;
+  display: none; /* Oculto por defecto */
+}
+
+.contact-header {
+  background-color: #850000; /* Cambiado de #c0392b a #850000 */
+  color: white;
+  padding: 10px 15px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.contact-header h3 {
+  margin: 0;
+  font-size: 18px;
+}
+
+.close-contact {
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.contact-body {
+  padding: 15px;
+  text-align: center;
+}
+
+.contact-body p {
+  font-size: 14px;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: #f5f5f5;
+  border-radius: 5px;
+  text-decoration: none;
+  color: #333;
+  font-size: 14px;
+  transition: background-color 0.3s;
+}
+
+.contact-option:hover {
+  background-color: #e0e0e0;
+}
+
+.contact-option i {
+  font-size: 18px;
+}
+
+.contact-option.whatsapp i {
+  color: #25D366;
+}
+
+.contact-option.instagram i {
+  color: #E1306C;
+}
+
+/* Banner de cookies */
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #333;
+  color: white;
+  padding: 15px;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  display: none; /* Oculto por defecto, se mostrará con JS */
+}
+
+.cookie-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.cookie-content p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.cookie-content a {
+  color: #850000; /* Cambiado de #c0392b a #850000 */
+  text-decoration: underline;
+}
+
+.cookie-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.cookie-buttons button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+#acceptCookies {
+  background-color: #850000; /* Cambiado de #c0392b a #850000 */
+  color: white;
+}
+
+#acceptCookies:hover {
+  background-color: #850000; /* Tono más oscuro de #850000 para hover */
+}
+
+#rejectCookies {
+  background-color: #666;
+  color: white;
+}
+
+#rejectCookies:hover {
+  background-color: #555;
+}
+
+/* Pop-up de registro con imagen */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none; /* Oculto por defecto, se mostrará con JS */
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup-content {
+  background-color: white;
+  border-radius: 10px;
+  max-width: 800px; /* Ancho máximo más grande para dar espacio a la imagen */
+  width: 90%;
+  position: relative;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: row; /* Aseguramos que sea fila por defecto */
+}
+
+.popup-inner {
+  display: flex;
+  flex-direction: row; /* Imagen y formulario en fila */
+  width: 100%;
+}
+
+.popup-image {
+  flex: 0 0 50%; /* La imagen ocupa el 50% del ancho */
+  max-width: 50%;
+  height: auto; /* Permitimos que la altura sea automática */
+}
+
+.popup-image img {
+  width: 100%;
+  height: 100%; /* La imagen ocupa toda la altura del contenedor */
+  object-fit: cover; /* Cubre el espacio sin deformarse */
+  border-radius: 10px 0 0 10px; /* Bordes redondeados solo a la izquierda */
+}
+
+.popup-form {
+  flex: 0 0 50%; /* El formulario ocupa el 50% del ancho */
+  max-width: 50%;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centramos verticalmente */
+}
+
+.close-popup {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+.popup-form h2 {
+  font-size: 24px;
+  margin-bottom: 10px;
+}
+
+.popup-form p {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 20px;
+}
+
+.form-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.form-container input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.register-button {
+  background-color: #850000; /* Cambiado de #c0392b a #850000 */
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.register-button:hover {
+  background-color: #850000; /* Tono más oscuro de #850000 para hover */
+}
+
+/* Media Query para tabletas y móviles (max-width: 768px) */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+  }
+
+  .logo {
+    margin: 0 auto 10px auto; /* Centrado horizontal y margen inferior */
+    text-align: center;
+  }
+
+  .hamburger {
+    display: block;
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    background-color: #fff;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    z-index: 10;
+    text-align: center;
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-menu a {
+    font-size: 16px;
+    display: block;
+  }
+
+  .search-bar {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .search-bar input {
+    width: 100%;
+    padding: 8px;
+  }
+
+  .user-actions {
+    display: none; /* Ocultamos las acciones por defecto */
+  }
+
+  .user-actions.active {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    margin-top: 20px;
+    text-align: center;
+  }
+
+  .user-actions.active a {
+    text-transform: uppercase; /* Mayúsculas para "Iniciar sesión" y "Cesta" */
+  }
+
+  .marquee-wrapper {
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .category-sections {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .category-item {
+    flex: 0 0 100%;
+    min-width: 0;
+  }
+
+  .footer-links {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .footer-links a {
+    margin: 5px 0;
+  }
+
+  .cookie-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+
+  .cookie-buttons {
+    justify-content: center;
+  }
+
+  .contact-popup {
+    width: 280px;
+    right: 10px;
+    bottom: 80px;
+  }
+
+  .popup-content {
+    flex-direction: column;
+    max-width: 90%;
+  }
+
+  .popup-inner {
+    flex-direction: column; /* Apilamos en pantallas pequeñas */
+  }
+
+  .popup-image {
+    flex: 0 0 100%;
+    max-width: 100%;
+    height: 200px; /* Altura fija para la imagen en móviles */
+  }
+
+  .popup-image img {
+    border-radius: 10px 10px 0 0; /* Ajustamos los bordes para móviles */
+    height: 100%;
+  }
+
+  .popup-form {
+    flex: 0 0 100%;
+    max-width: 100%;
+    padding: 20px;
+  }
+}
+
+/* Media Query para móviles pequeños (max-width: 480px) */
+@media (max-width: 480px) {
+  .header {
+    padding: 8px;
+  }
+
+  .logo img {
+    height: 40px;
+  }
+
+  .hamburger {
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+  }
+
+  .nav-menu {
+    top: 50px;
+    padding: 15px;
+  }
+
+  .nav-menu a {
+    font-size: 14px;
+  }
+
+  .search-bar input {
+    padding: 6px;
+    font-size: 12px;
+  }
+
+  .user-actions.active {
+    margin-top: 15px;
+  }
+
+  .user-actions.active a {
+    text-transform: uppercase; /* Mayúsculas para "Iniciar sesión" y "Cesta" */
+  }
+
+  .marquee-wrapper {
+    height: 20px;
+    font-size: 10px;
+  }
+
+  .newsletter-content h2 {
+    font-size: 24px;
+  }
+
+  .newsletter-content p {
+    font-size: 14px;
+  }
+
+  .newsletter-button {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+
+  .floating-button {
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .cookie-content p {
+    font-size: 12px;
+  }
+
+  .cookie-buttons button {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+
+  .popup-content {
+    padding: 15px;
+  }
+
+  .popup-form h2 {
+    font-size: 20px;
+  }
+
+  .popup-form p {
+    font-size: 12px;
+  }
+
+  .form-container input {
+    font-size: 12px;
+  }
+
+  .register-button {
+    font-size: 14px;
+  }
+
+  .contact-popup {
+    width: 250px;
+    right: 10px;
+    bottom: 70px;
+  }
+
+  .contact-header h3 {
+    font-size: 16px;
+  }
+
+  .contact-body p {
+    font-size: 12px;
+  }
+
+  .contact-option {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .contact-option i {
+    font-size: 16px;
+  }
+}
+
+/* Ajustes específicos para pantallas grandes (versión de PC) */
+@media (min-width: 769px) {
+  .header {
+    justify-content: space-between; /* Distribuimos los elementos */
+    align-items: center;
+    flex-wrap: nowrap; /* Aseguramos que no se envuelva */
+    width: 100%; /* Forzamos que ocupe todo el ancho */
+  }
+
+  .logo {
+    flex: 0 0 auto; /* El logo no crece ni se reduce */
+    margin-right: 20px; /* Espacio a la derecha del logo */
+  }
+
+  .nav-menu {
+    flex: 0 0 auto; /* El menú no crece ni se reduce */
+    margin-right: 20px; /* Espacio a la derecha del menú */
+  }
+
+  .search-bar {
+    flex-grow: 1; /* La barra de búsqueda ocupa el espacio disponible */
+    margin: 0 20px;
+    min-width: 200px; /* Aseguramos un ancho mínimo */
+  }
+
+  .user-actions {
+    flex: 0 0 auto; /* Las acciones no crecen ni se reducen */
+    margin-left: 20px; /* Espacio a la izquierda de las acciones */
+  }
+}
