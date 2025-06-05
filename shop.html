@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda | Moda urbana alternativa | Alto Contraste</title>
+  <meta name="description" content="Explora camisetas oversize, pantalones y sacos con estilo aesthetic y gótico. Moda streetwear única en Alto Contraste. ¡Compra ahora!">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="header">
+    <a href="index.html" class="logo"><div class="logo"><img src="Imagenes/Logo/Logorojo.png" alt="Logo Alto Contraste" style="height: 50px;"></div></a>
+    <button class="hamburger" aria-label="Abrir menú">☰</button>
+    <nav class="nav-menu">
+      <a href="index.html">Inicio</a>
+      <a href="shop.html">Tienda</a>
+      <a href="#">Colecciones</a>
+      <a href="#">Blog</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Buscar...">
+    </div>
+    <div class="user-actions">
+      <a href="#">Iniciar sesión</a>
+      <a href="#">Cesta</a>
+    </div>
+  </header>
+
+  <section class="shop-section">
+    <div class="shop-container">
+      <aside class="filters">
+        <h3>Filtros</h3>
+        <div class="filter-group">
+          <h4>Categoría</h4>
+          <label><input type="checkbox" name="category" value="camisetas" checked> Camisetas</label>
+          <label><input type="checkbox" name="category" value="pantalones"> Pantalones</label>
+          <label><input type="checkbox" name="category" value="sacos"> Sacos</label>
+        </div>
+        <div class="filter-group">
+          <h4>Precio</h4>
+          <input type="range" min="0" max="100000" value="100000" id="price-range">
+          <span id="price-value">$100.000</span>
+        </div>
+      </aside>
+
+      <div class="product-grid">
+        <!-- Producto 1 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=1">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/E1.png" alt="Camiseta oversize aesthetic Hand Wings" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F1.png" alt="Camiseta oversize aesthetic Hand Wings trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=1">Hand Wings</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 2 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=2">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/E2.png" alt="Camiseta oversize aesthetic Demon Wings" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F1.png" alt="Camiseta oversize aesthetic Demon Wings trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=2">Demon Wings</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 3 -->
+        <div class="product-card" data-category="camisetas" data-price="59900"> <a href="product-detail.html?id=6">
+          <div class="image-container"> <img src="Imagenes/Camisetas/Pequeñas/E6.png" alt="Camiseta oversize aesthetic Fairy Wings" class="main-img" /> <img src="Imagenes/Camisetas/Pequeñas/F3.png" alt="Camiseta oversize aesthetic Fairy Wings trasera" class="hover-img" />
+            <div class="options-panel">
+              <div class="size-options">
+                <h5>Talla:</h5>
+                <button class="size-btn" data-size="S">S</button>
+                <button class="size-btn" data-size="M">M</button>
+                <button class="size-btn" data-size="L">L</button>
+                <button class="size-btn" data-size="XL">XL</button>
+              </div>
+              <div class="color-options">
+                <h5>Color:</h5>
+                <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+              </div>
+            </div>
+          </div>
+          </a>
+          <p class="product-title"> <a href="product-detail.html?id=6">Fairy Wings</a> </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=3">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/E3.png" alt="Camiseta oversize aesthetic That's the spirit" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F2.png" alt="Camiseta oversize aesthetic That's the spirit trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=3">That's the spirit</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 4 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=4">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/E4.png" alt="Camiseta oversize aesthetic Hexagram 1" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F2.png" alt="Camiseta oversize aesthetic Hexagram 1 trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=4">Hexagram 1</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 5 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=5">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/E5.png" alt="Camiseta oversize aesthetic Hexagram 2" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F4.png" alt="Camiseta oversize aesthetic Hexagram 2 trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=5">Hexagram 2</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 6 -->
+        <!-- Producto 7 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=7">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/Z1.png" alt="Camiseta oversize aesthetic Skull 1" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F3.png" alt="Camiseta oversize aesthetic Skull 1 trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=7">Fox Skull&nbsp;</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 8 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=8">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/C1.png" alt="Camiseta oversize aesthetic Chrome 1" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F4.png" alt="Camiseta oversize aesthetic Chrome 1 trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=8">Raven Skull</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+
+        <!-- Producto 9 -->
+        <div class="product-card" data-category="camisetas" data-price="59900">
+          <a href="product-detail.html?id=9">
+            <div class="image-container">
+              <img src="Imagenes/Camisetas/Pequeñas/H1.png" alt="Camiseta oversize aesthetic Anime 1" class="main-img" />
+              <img src="Imagenes/Camisetas/Pequeñas/F4.png" alt="Camiseta oversize aesthetic Anime 1 trasera" class="hover-img" />
+              <div class="options-panel">
+                <div class="size-options">
+                  <h5>Talla:</h5>
+                  <button class="size-btn" data-size="S">S</button>
+                  <button class="size-btn" data-size="M">M</button>
+                  <button class="size-btn" data-size="L">L</button>
+                  <button class="size-btn" data-size="XL">XL</button>
+                </div>
+                <div class="color-options">
+                  <h5>Color:</h5>
+                  <button class="color-btn" data-color="Blanco" style="background-color: #fff; border: 1px solid #ccc;"></button>
+                  <button class="color-btn" data-color="Negro" style="background-color: #000;"></button>
+                  <button class="color-btn" data-color="Rojo" style="background-color: #850000;"></button>
+                  <button class="color-btn" data-color="Morado" style="background-color: #4B0082;"></button>
+                </div>
+              </div>
+            </div>
+          </a>
+          <p class="product-title">
+            <a href="product-detail.html?id=9">Hare Skull</a>
+          </p>
+          <p class="product-price">$59.900</p>
+          <button class="add-to-cart">Añadir al carrito</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carrito plegable/desplegable en la derecha -->
+  <div id="cart-sidebar" class="cart-sidebar">
+    <div class="cart-toggle">
+      <span>Carrito</span>
+      <span id="cart-toggle-icon">🛒</span>
+    </div>
+    <div class="cart-content">
+      <h2>Tu Carrito</h2>
+      <div id="cart-sidebar-items"></div>
+      <div class="cart-sidebar-total">
+        <h3>Total: <span id="cart-sidebar-total-price">$0</span></h3>
+        <button id="checkout-sidebar-button" class="checkout-btn">Proceder al pago</button>
+      </div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div class="footer-content">
+      <p>© 2025 Alto Contraste. Todos los derechos reservados.</p>
+      <div class="footer-links">
+        <a href="mailto:contacto@altocontraste.com">Contacto</a>
+        <a href="https://facebook.com/altocontraste">Facebook</a>
+        <a href="https://www.instagram.com/alto._.contraste/">Instagram</a>
+        <a href="terms.html">Términos y Condiciones</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Botón flotante de WhatsApp -->
+  <button class="floating-button" id="floatingButton" aria-label="Chat de soporte">
+    <img src="Imagenes/Iconos/Whatsapp.png" alt="WhatsApp" style="width: 60px; height: 60px;">
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
